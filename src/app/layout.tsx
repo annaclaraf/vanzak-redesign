@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CustomCursor } from "@/components/custom-cursor";
 import { Header } from "@/components/header";
 import "./globals.css";
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] bg-[#09090b] text-[#fafafa]`}>
+        <CustomCursor />
         <Header />
         {children}
       </body>

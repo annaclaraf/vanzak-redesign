@@ -32,7 +32,7 @@ export function MagneticButton({ children, className, onClick }: MagneticButtonP
   return (
     <motion.button
       ref={buttonRef}
-      className={`block relative cursor-pointer ${className}`}
+      className={`block relative cursor-none ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
