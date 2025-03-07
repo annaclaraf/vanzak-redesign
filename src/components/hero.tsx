@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { MagneticButton } from "./magnetic-button";
+import { MagneticLink } from "./magnetic-link";
 import { RevealText } from "./reveal-text";
 
 export function Hero() {
@@ -34,13 +34,13 @@ export function Hero() {
           
           <RevealText delay={0.6}>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <MagneticButton className="bg-[#0638e5] text-[##f8fafc] px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
+              <MagneticLink href="/cases" className="bg-[#0638e5] text-[##f8fafc] px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
                 Explore Nosso Trabalho
-              </MagneticButton>
+              </MagneticLink>
               
-              <MagneticButton className="bg-transparent border border-[#0638e3] text-[#0638e3] px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
+              <MagneticLink href="/contato" className="bg-transparent border border-[#0638e3] text-[#0638e3] px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
                 Entre em Contato
-              </MagneticButton>
+              </MagneticLink>
             </div>
           </RevealText>
         </div>
