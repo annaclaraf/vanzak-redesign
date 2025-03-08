@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
@@ -16,24 +16,9 @@ export function Cases() {
   const sectionRef = useRef<HTMLElement>(null);
   const horizontalRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
 
-    window.addEventListener('resize', checkMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
-  }, []);
-  
   useEffect(() => {
-    if (horizontalRef.current && sectionRef.current && !isMobile) {
+    if (horizontalRef.current && sectionRef.current) {
       const scrollTween = gsap.to(horizontalRef.current, {
         x: () => -(horizontalRef.current!.scrollWidth - window.innerWidth + 48),
         ease: "none",
@@ -51,10 +36,10 @@ export function Cases() {
         scrollTween.kill();
       };
     }
-  }, [isMobile]);
+  }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 relative">
+    <section id="projects" ref={sectionRef} className="py-20 md:py-32 relative">
       <div className="container text-center mb-16">
         <RevealText>
           <span className="inline-block text-white font-mono text-sm tracking-wider mb-4">
@@ -74,22 +59,11 @@ export function Cases() {
       </div>
       
       <div className="overflow-hidden">
-        <div 
-          ref={horizontalRef} 
-          className={`${
-            isMobile 
-              ? 'flex flex-col gap-6 px-4' 
-              : 'flex gap-8 px-5 md:px-8 lg:px-12'
-          }`}
-        >
+        <div ref={horizontalRef} className="flex gap-8 pl-5 md:pl-8 lg:pl-12 pr-12">
           {cases.map((project, index) => (
             <motion.div 
               key={index}
-              className={`relative ${
-                isMobile 
-                  ? 'w-full' 
-                  : 'min-w-[350px] md:min-w-[450px] lg:min-w-[620px]'
-              } bg-[#020617] border border-[#f8fafc]/10 rounded-xl overflow-hidden group`}
+              className="relative min-w-[350px] md:min-w-[500px] bg-[#020617] border border-[#f8fafc]/10 rounded-xl overflow-hidden group"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -101,11 +75,7 @@ export function Cases() {
                   className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                 />
 
-                <div className={`absolute bottom-0 left-0 w-full p-4 md:p-8 bg-gradient-to-t from-black/80 to-black/0 ${
-                  isMobile 
-                    ? 'translate-y-0 opacity-100' 
-                    : 'translate-y-1/5 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100'
-                }`}>
+                <div className="absolute bottom-0 left-0 w-full p-4 md:p-8 bg-gradient-to-t from-black/80 to-black/0 md:translate-y-1/5 md:opacity-0 md:transition-all md:duration-300 md:ease-in-out md:group-hover:translate-y-0 md:group-hover:opacity-100 translate-y-0 opacity-100">
                   <span className="inline-block bg-[#0638e5] text-white text-xs px-3 py-1 rounded-full mb-2">
                     {project.category}
                   </span>
