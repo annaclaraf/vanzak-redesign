@@ -40,7 +40,7 @@ export function Cases() {
 
   return (
     <section id="projects" ref={sectionRef} className="py-20 md:py-32 relative">
-      <div className="container text-center mb-16">
+      <div className="container text-center max-w-[850px] mx-auto mb-16">
         <RevealText>
           <span className="inline-block text-white font-mono text-sm tracking-wider mb-4">
             NOSSO TRABALHO
@@ -81,9 +81,9 @@ export function Cases() {
                   </span>
                   <h3 className="text-[16px] md:text-xl font-display font-bold text-white mb-2">{project.title}</h3>
                   <p className="text-white/80 text-sm mb-4 line-clamp-2">{project.description}</p>
-                  <Link href={`case/${project.slug}`} className="inline-flex items-center text-white hover:text-[#0638e5] transition-colors text-sm">
+                  <MagneticLink href={`case/${project.slug}`} className="inline-flex items-center text-white hover:text-[#0638e5] transition-colors text-sm">
                     Ver Case <ArrowUpRight size={16} className="ml-1" />
-                  </Link>
+                  </MagneticLink>
                 </div>
               </div>
             </motion.div>
