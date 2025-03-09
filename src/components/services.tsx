@@ -20,7 +20,7 @@ export function Services() {
           </RevealText>
           <RevealText delay={0.2}>
             <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-4">
-              Transformando ideias em <span className="text-[#0638e5]">realidade digital</span>
+              Transformando Ideias em <span className="text-[#0638e5]">Realidade Digital</span>
             </h2>
           </RevealText>
           <RevealText delay={0.4}>
