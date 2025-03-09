@@ -1,13 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Logo from "@/icons/logo";
 import Link from "next/link";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > (previous ?? 0) && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   const toggleMenu = () => {
     if (isOpen) {
@@ -59,9 +70,9 @@ export function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#09090bcc] border-b border-[#27272a66] ${!isOpen && !isClosing ? 'backdrop-blur-md' : ''}`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#09090bcc] border-b border-[#27272a66] ${!isOpen && !isClosing ? 'backdrop-blur-md' : ''} ${hidden && 'translate-y-[-100%]'}`}
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ y: hidden ? -100 : 0 }}
       transition={{ duration: 0.3 }}
     >
       <div className="max-w-[1400px] w-full mx-auto px-5 py-5 flex items-center justify-between">
