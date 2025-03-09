@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero";
 import { Cases } from "@/components/cases";
 import { Process } from "@/components/process";
 import { Services } from "@/components/services";
+import { Founders } from "@/components/founders";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Cases />
       <Process />
       <Services />
+      <Founders />
     </div>
   );
 }
