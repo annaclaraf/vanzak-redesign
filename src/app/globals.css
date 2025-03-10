@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  --color-primary: #0638e5;
+  --color-light: #f8fafc;
+  --color-muted: #a1a1aa;
+  --color-dark: #09090b;
+  --color-surface: #1c1e22;
+
   --animate-pulse-slow: pulse-slow 0.3s ease-out;
   --animate-scroll-down: scrollDown 1.5s infinite;
   

@@ -45,11 +45,11 @@ export function Process() {
           </RevealText>
           <RevealText delay={0.2}>
             <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-4">
-              Como nós <span className="text-[#0638e5]">Trabalhamos</span>
+              Como nós <span className="text-primary">Trabalhamos</span>
             </h2>
           </RevealText>
           <RevealText delay={0.4}>
-            <p className="text-[16px] md:text-[18px] lg:text-2xl text-[#a1a1aa] max-w-2xl mx-auto">
+            <p className="text-[16px] md:text-[18px] lg:text-2xl text-muted max-w-2xl mx-auto">
               Nosso processo comprovado garante que entregaremos resultados excepcionais que atendem aos seus objetivos de negócios.
             </p>
           </RevealText>
@@ -58,13 +58,13 @@ export function Process() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {processSteps.map((step, index) => (
             <RevealText key={index} delay={index * 0.1}>
-              <div className="relative bg-[#1c1e22] border border-[#f8fafc]/10 rounded-lg p-6 h-full">
-                <div className="absolute -top-2.5 -right-2.5 w-12 h-12 bg-[#0638e5] rounded-full flex items-center justify-center text-white font-bold">
+              <div className="relative bg-surface border border-light/10 rounded-lg p-6 h-full">
+                <div className="absolute -top-2.5 -right-2.5 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
                   {step.number}
                 </div>
-                <div className="text-[#0638e5] mb-3 md:mb-6">{step.icon}</div>
+                <div className="text-primary mb-3 md:mb-6">{step.icon}</div>
                 <h3 className="text-lg md:text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-[#F8FAFC]/70 text-sm md:text-[16px]">{step.description}</p>
+                <p className="text-light/70 text-sm md:text-[16px]">{step.description}</p>
               </div>
             </RevealText>
           ))}

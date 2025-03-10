@@ -70,7 +70,7 @@ export function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#09090bcc] border-b border-[#27272a66] ${!isOpen && !isClosing ? 'backdrop-blur-md' : ''} ${hidden && 'translate-y-[-100%]'}`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-dark/80 border-b border-surface/60 ${!isOpen && !isClosing ? 'backdrop-blur-md' : ''} ${hidden && 'translate-y-[-100%]'}`}
       initial={{ y: -100 }}
       animate={{ y: hidden ? -100 : 0 }}
       transition={{ duration: 0.3 }}
@@ -82,7 +82,7 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={`relative inline-block py-[0.5rem] weight-500 transition-colors duration-300 ease after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#0638e5] after:transition-all after:duration-300 after:ease hover:after:w-full`}>
+            <Link key={link.href} href={link.href} className={`relative inline-block py-[0.5rem] weight-500 transition-colors duration-300 ease after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 after:ease hover:after:w-full`}>
               {link.label}
             </Link>
           ))}
@@ -109,7 +109,7 @@ export function Header() {
           <AnimatePresence onExitComplete={() => setIsClosing(false)}>
             {isOpen && (
               <motion.div 
-                className="w-full h-full bg-[#252527] fixed inset-0 z-40 flex flex-col justify-center items-center"
+                className="w-full h-full bg-surface fixed inset-0 z-40 flex flex-col justify-center items-center"
                 initial="closed"
                 animate="open"
                 exit="closed"
@@ -120,7 +120,7 @@ export function Header() {
                     <motion.a
                       key={link.href}
                       href={link.href}
-                      className="text-3xl font-display font-medium text-[#e5e5dc] hover:text-[#0638e5] transition-colors"
+                      className="text-3xl font-display font-medium text-light hover:text-primary transition-colors"
                       onClick={toggleMenu}
                       variants={menuItemVariants}
                     >
@@ -135,12 +135,12 @@ export function Header() {
                 >
                   <div className="flex justify-center space-x-6 mb-4">
                     {externalLinks.map((link) => (
-                      <a key={link.href} href={link.href} target="_blank" className="text-[#e5e5dc8e] hover:text-[#0638e5] transition-colors">
+                      <a key={link.href} href={link.href} target="_blank" className="text-light/56 hover:text-primary transition-colors">
                         {link.label}
-                        </a>
+                      </a>
                     ))}
                   </div>
-                  <p className="text-[#e5e5dc8e]">© {new Date().getFullYear()} VanzakLabs</p>
+                  <p className="text-light/56">© {new Date().getFullYear()} VanzakLabs</p>
                 </motion.div>
               </motion.div>
             )}

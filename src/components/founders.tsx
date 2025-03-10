@@ -31,11 +31,11 @@ export function Founders() {
           </RevealText>
           <RevealText delay={0.2}>
             <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-4">
-              Visão que <span className="text-[#0638e5]">Inspira</span>
+              Visão que <span className="text-primary">Inspira</span>
             </h2>
           </RevealText>
           <RevealText delay={0.4}>
-            <p className="text-[16px] md:text-[18px] lg:text-2xl text-[#a1a1aa] max-w-2xl mx-auto">
+            <p className="text-[16px] md:text-[18px] lg:text-2xl text-muted max-w-2xl mx-auto">
               Conheça nossos fundadores, mentes visionárias que transformam desafios em inovação e impulsionam nosso crescimento.
             </p>
           </RevealText>
@@ -50,15 +50,15 @@ export function Founders() {
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5, delay: 0.2 * index, ease: "easeOut" }}
-                className="h-full bg-[#1a1a1a] p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center text-center overflow-hidden relative"
+                className="h-full bg-surface p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center text-center overflow-hidden relative"
               >
-                <div className="max-w-[200px] md:max-w-92 w-full aspect-[1] rounded-full mb-4 border-5 border-[#0638e5] overflow-hidden">
+                <div className="max-w-[200px] md:max-w-92 w-full aspect-[1] rounded-full mb-4 border-5 border-primary overflow-hidden">
                   <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
                 </div>
                 <h3 className="text-xl md:text-[22px] lg:text-[26px] font-bold text-white mb-2">
                   {founder.name}
                 </h3>
-                <p className="text-[#a1a1aa] text-sm md:text-[16px] lg:text-[18px]">
+                <p className="text-muted text-sm md:text-[16px] lg:text-[18px]">
                   {founder.description}
                 </p>
               </motion.div>
