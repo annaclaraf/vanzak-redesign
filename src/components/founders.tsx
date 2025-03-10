@@ -43,13 +43,12 @@ export function Founders() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {founders.map((founder, index) => (
-            <RevealText delay={(index + 6 ) * 0.1} key={founder.name}>
+            <RevealText delay={(index + 4) * 0.1} key={founder.name}>
               <motion.div
                 key={founder.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5, delay: 0.2 * index, ease: "easeOut" }}
                 className="h-full bg-surface p-4 md:p-6 rounded-2xl shadow-lg flex flex-col items-center text-center overflow-hidden relative"
               >
                 <div className="max-w-[200px] md:max-w-92 w-full aspect-[1] rounded-full mb-4 border-5 border-primary overflow-hidden">
