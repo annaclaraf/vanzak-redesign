@@ -7,9 +7,10 @@ interface MagneticLinkProps {
   children?: React.ReactNode;
   className?: string;
   href: string;
+  target?: string;
 }
 
-export function MagneticLink({ children, className, href }: MagneticLinkProps) {
+export function MagneticLink({ children, className, href, target }: MagneticLinkProps) {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -33,6 +34,7 @@ export function MagneticLink({ children, className, href }: MagneticLinkProps) {
     <motion.a
       href={href}
       ref={linkRef}
+      target={target}
       className={`block relative cursor-none ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
