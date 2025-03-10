@@ -91,7 +91,7 @@ export function Cases() {
         </div>
       </div>
       
-      <div className="container mx-auto px-6 md:px-12 mt-12 text-center">
+      <div className="container mx-auto mt-12 text-center">
         <RevealText delay={0.2}>
           <MagneticLink href="/cases" className="inline-block bg-primary text-light px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
             Veja todos os cases

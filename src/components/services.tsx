@@ -11,7 +11,7 @@ export function Services() {
 
   return (
     <section id="services" ref={sectionRef} className="py-20 md:py-32 relative">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto">
         <div className="text-center max-w-[800px] mx-auto mb-16">
           <RevealText>
             <span className="inline-block text-white font-mono text-sm tracking-wider mb-4">
