@@ -10,7 +10,7 @@ export function AboutUs() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 md:py-32 relative">
+    <section id="about" ref={sectionRef} className="py-15 md:py-25 relative">
       <div className="container flex flex-col lg:flex-row items-stretch justify-center gap-8">
         <div className="lg:w-1/2 w-full max-w-[850px] lg:max-w-full mx-auto text-center lg:text-left">
           <RevealText>

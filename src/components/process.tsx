@@ -35,7 +35,7 @@ export function Process() {
   const sectionRef = useRef<HTMLElement>(null);
   
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 relative">
+    <section ref={sectionRef} className="py-15 md:py-25 relative">
       <div className="container">
         <div className="text-center max-w-[850px] mx-auto mb-16">
           <RevealText>

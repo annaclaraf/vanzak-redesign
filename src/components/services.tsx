@@ -10,7 +10,7 @@ export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 md:py-32 relative">
+    <section id="services" ref={sectionRef} className="py-15 md:py-25 relative">
       <div className="container mx-auto">
         <div className="text-center max-w-[800px] mx-auto mb-16">
           <RevealText>

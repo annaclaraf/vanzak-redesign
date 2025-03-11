@@ -39,7 +39,7 @@ export function Cases() {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 md:py-32 relative">
+    <section id="projects" ref={sectionRef} className="py-15 md:py-25 relative">
       <div className="container text-center max-w-[850px] mx-auto mb-16">
         <RevealText>
           <span className="inline-block text-white font-mono text-sm tracking-wider mb-4">
