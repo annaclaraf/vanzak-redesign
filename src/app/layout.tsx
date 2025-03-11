@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ProgressScroll } from "@/components/progress-scroll";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] bg-dark text-light`}>
+        <ProgressScroll />
         <CustomCursor />
         <Header />
         {children}
