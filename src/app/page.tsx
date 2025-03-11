@@ -14,8 +14,8 @@ export default function Home() {
       <AboutUs />
       <Cases />
       <Process />
-      <Services />
       <Founders />
+      <Services />
     </div>
   );
 }
