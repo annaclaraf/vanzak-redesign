@@ -1,16 +1,16 @@
 import { Service } from "@/types/service";
-import { ShoppingCart, Briefcase, Star, BarChart, MonitorSmartphone, Users } from 'lucide-react';
+import { ShoppingCart, ClipboardList, Star, BarChart, MonitorSmartphone, LayoutGrid } from 'lucide-react';
 
 export const services: Service[] = [
   {
-    icon: <Briefcase size={32} />,
+    icon: <ClipboardList size={32} />,
     slug: "consultoria",
     title: "Consultoria",
     headline: "Desenvolva seu produto e negócio com a nossa ajuda",
     description: "Os melhores profissionais, treinados e capacitados para trazer visibilidade, conhecimento e resultados à sua empresa.",
   },
   {
-    icon: <Users size={32} />,
+    icon: <LayoutGrid size={32} />,
     slug: "social-media",
     title: "Social Media",
     headline: "Porque tudo hoje começa nas redes sociais",
