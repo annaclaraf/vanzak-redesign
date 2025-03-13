@@ -37,3 +37,49 @@
   padding-inline: 20px;
   margin-inline: auto;
 }
+
+.animate-line {
+  max-width: 500px;
+  height: auto;
+}
+
+.line1, .line2, .line3, .line4, .line5, .line6, .line7 {
+  visibility: hidden;
+}
+
+.line-animation.line1 {
+  visibility: visible;
+  stroke: white;
+  stroke-dasharray: 2900;
+  stroke-dashoffset: 2900;
+  animation: 3s linear 0s 1 normal forwards running ffGLem;
+}
+
+.line-animation.line2 {
+  visibility: visible;
+  stroke: white;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: 1s linear 2s 1 normal forwards running ffGLem;
+}
+
+.line-animation.line3, .line-animation.line4, .line-animation.line5, .line-animation.line6 {
+  visibility: visible;
+  stroke: white;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: 4s linear 2.8s 1 normal forwards running ffGLem;
+}
+
+.line-animation.line7 {
+  stroke: white;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: 3.5s linear 3.2s 1 normal forwards running ffGLem;
+}
+
+@keyframes ffGLem {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
