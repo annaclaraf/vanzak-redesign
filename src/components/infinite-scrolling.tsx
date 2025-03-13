@@ -4,7 +4,7 @@ import React from 'react';
 
 import { motion } from "framer-motion";
 
-const words: String[] = ["Tráfego Pago", "Shopify Experts", "Influenciadores"];
+const words: string[] = ["Tráfego Pago", "Shopify Experts", "Influenciadores"];
 
 export function InfiniteScrolling() {
   return (
