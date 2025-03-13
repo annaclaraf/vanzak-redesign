@@ -2,8 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import Link from 'next/link';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { RevealText } from './reveal-text';
@@ -15,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger);
 export function Cases() {
   const sectionRef = useRef<HTMLElement>(null);
   const horizontalRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   useEffect(() => {
     if (horizontalRef.current && sectionRef.current) {

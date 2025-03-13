@@ -7,7 +7,7 @@ export function AnimatedSVG() {
   const [inView, setInView] = useState(false);
 
   return (
-    <InView as="div" onChange={(inView, entry) => setInView(inView)} threshold={0.5} className="flex justify-center">
+    <InView as="div" onChange={(inView) => setInView(inView)} threshold={0.5} className="flex justify-center">
       <svg
         width="670px"
         height="240px"
