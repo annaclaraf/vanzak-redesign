@@ -7,7 +7,7 @@ import { WhatWeDo } from "@/components/what-we-do";
 import { Waves } from "@/components/react-bits/waves";
 
 export const metadata: Metadata = {
-  title: "Sobre Nós | Vanza Labs"
+  title: "Sobre Nós | Vanzak Labs"
 };
 
 export default function About() {
