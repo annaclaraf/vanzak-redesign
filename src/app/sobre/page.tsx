@@ -12,8 +12,8 @@ export default function About() {
     <div>
       <div className="relative w-full h-[200px] md:h-[350px]">
         <Waves
-          lineColor="#a1a1aa"
-          backgroundColor="#1c1e22"
+          lineColor="#1c1e22"
+          backgroundColor="#09090b"
           waveSpeedX={0.02}
           waveSpeedY={0.01}
           waveAmpX={40}
