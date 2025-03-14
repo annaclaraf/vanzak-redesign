@@ -1,11 +1,14 @@
-"use client";
-
+import type { Metadata } from "next";
 import { ImageGalery } from "@/components/image-galery";
 import { RevealText } from "@/components/reveal-text";
 import { Services } from "@/components/services";
 import { Values } from "@/components/values";
 import { WhatWeDo } from "@/components/what-we-do";
 import { Waves } from "@/components/react-bits/waves";
+
+export const metadata: Metadata = {
+  title: "Sobre Nós | Vanza Labs"
+};
 
 export default function About() {
   return (
