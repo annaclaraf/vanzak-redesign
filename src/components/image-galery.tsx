@@ -12,7 +12,7 @@ export function ImageGalery() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
-              className="lg:col-span-2 relative aspect-[16/9] overflow-hidden rounded-2xl"
+              className="md:col-span-2 relative aspect-square md:aspect-[16/9] overflow-hidden rounded-2xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
