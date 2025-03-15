@@ -26,7 +26,7 @@ export const services: Service[] = [
   {
     icon: <ShoppingCart size={32} />,
     slug: "ecommerce",
-    title: "E-commerce",
+    title: "E-Commerce",
     headline: "Shopify Experts",
     description: "Nossos especialistas em programação e Web Design são capazes de criar o e-commerce perfeito para a sua empresa, a partir de um site dinâmico e uma plataforma ágil, segura e moderna.",
   },
