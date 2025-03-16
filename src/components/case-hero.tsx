@@ -6,20 +6,23 @@ import { RevealText } from "./reveal-text";
 import { MagneticLink } from "./magnetic-link";
 import { ArrowLeft } from "lucide-react";
 import { Case } from "@/types/case";
+import { useRouter } from "next/navigation";
 
 interface CaseHeroProps {
   project: Case;
 }
 
 export function CaseHero({ project }: CaseHeroProps) {
+  const router = useRouter();
+
   return (
     <section className="py-10 md:py-15">
       <div className="container">
         <RevealText delay={0.1}>
-          <Link href="/cases" className="group text-primary flex items-center gap-2">
+          <button className="group text-primary flex items-center gap-2" onClick={() => router.back()}>
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             Voltar
-          </Link>
+          </button>
         </RevealText>
           
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-5">
