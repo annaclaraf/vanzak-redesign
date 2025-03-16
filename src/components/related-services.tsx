@@ -6,7 +6,6 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { RevealText } from "./reveal-text";
 import { services } from "@/data/services";
-import Orb from "./react-bits/orb";
 
 interface RelatedServicesProps {
   services: string[];
@@ -43,13 +42,9 @@ export function RelatedServices({ services: serviceNames }: RelatedServicesProps
                   <div className="w-[80px] h-[80px] md:w-[140px] md:h-[140px] rounded-full flex items-center justify-center p-5 md:p-12 [&>svg]:w-full [&>svg]:h-full">
                     {service.icon}
                   </div>
-                  <div className="absolute w-full h-full">
-                    <Orb
-                      hoverIntensity={0.5}
-                      rotateOnHover={true}
-                      forceHoverState={false}
-                      hue={0}
-                    />
+                  <div className="absolute w-full h-full overflow-hidden">
+                    <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-primary/30 rounded-full filter blur-3xl"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-32 h-21 bg-light/20 rounded-full filter blur-3xl"></div>
                   </div>
                 </div>
                 
