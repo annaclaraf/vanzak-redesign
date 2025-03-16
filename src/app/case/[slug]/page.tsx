@@ -7,23 +7,24 @@ import { VisualDocumentation } from "@/components/visual-documentation";
 import { Navigation } from "@/components/navigation";
 import { cases } from "@/data/cases";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = await Promise.resolve(params);
+interface CasePageProps {
+  params: Promise<{ slug: string }>
+}
 
-  if (!slug) {
-    return {
-      title: "Case não encontrado | Vanzak Labs"
-    };
-  }
+function findProject(slug: string) {
+  return cases.find((proj) => proj.slug === slug) || null;
+}
 
-  const project = cases.find(proj => proj.slug === slug);
-  
+export async function generateMetadata({params}: CasePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = findProject(slug);
+
   if (!project) {
     return {
-      title: "Case não encontrado | Vanzak Labs"
+      title: "Case não encontrado | Vanzak Labs",
     };
   }
-  
+
   return {
     title: `${project.title} | Vanzak Labs`,
     description: project.description,
@@ -31,24 +32,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export async function generateStaticParams() {
-  return cases.map(project => ({
+  return cases.map((project) => ({
     slug: project.slug,
   }));
 }
 
-export default async function Case({ params }: { params: { slug: string } }) {
-  const { slug } = await Promise.resolve(params);
+export default async function Case({params}: CasePageProps) {
+  const { slug } = await params;
+  const project = findProject(slug);
 
-  if (!slug) {
-    notFound();
-  }
-
-  const project = cases.find(proj => proj.slug === slug);
-  
   if (!project) {
-    notFound();
+    return notFound();
   }
-  
+
   const currentIndex = cases.findIndex(proj => proj.slug === slug);
   const prevCase = currentIndex > 0 ? cases[currentIndex - 1] : null;
   const nextCase = currentIndex < cases.length - 1 ? cases[currentIndex + 1] : null;
