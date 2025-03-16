@@ -49,7 +49,7 @@ export function CaseCard({ project }: CaseCardProps) {
             )}
           </div>
           
-          <div className="flex items-center font-medium text-muted group-hover:text-primary ">
+          <div className="flex items-center font-medium text-primary ">
             Ver Case
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </div>
