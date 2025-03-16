@@ -20,8 +20,8 @@ export function MagneticLink({ children, className, href, target }: MagneticLink
     const { clientX, clientY } = e;
     const { left, top, width, height } = linkRef.current.getBoundingClientRect();
     
-    const x = (clientX - (left + width / 2)) * 0.3;
-    const y = (clientY - (top + height / 2)) * 0.3;
+    const x = (clientX - (left + width / 2)) * 0.15;
+    const y = (clientY - (top + height / 2)) * 0.15;
     
     setPosition({ x, y });
   };
