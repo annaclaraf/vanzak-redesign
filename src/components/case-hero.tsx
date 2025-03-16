@@ -42,7 +42,7 @@ export function CaseHero({ project }: CaseHeroProps) {
             <RevealText delay={0.4}>
               <div className="flex flex-wrap gap-2">
                 {project.services.map((service, index) => (
-                  <Link key={index} href={`/service/${service.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <Link key={index} href={`/service/${service.toLowerCase().replace(/-/g, '').replace(/\s+/g, '-')}`}>
                     <span className="bg-surface px-3 py-1 rounded-full text-sm transition-colors hover:text-primary">
                       {service}
                     </span>
