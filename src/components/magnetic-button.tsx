@@ -7,9 +7,11 @@ interface MagneticButtonProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
-export function MagneticButton({ children, className, onClick }: MagneticButtonProps) {
+export function MagneticButton({ children, className, onClick, type, disabled }: MagneticButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -32,6 +34,8 @@ export function MagneticButton({ children, className, onClick }: MagneticButtonP
   return (
     <motion.button
       ref={buttonRef}
+      type={type}
+      disabled={disabled}
       className={`block relative cursor-none ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
