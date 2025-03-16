@@ -55,7 +55,7 @@ export default async function Case({params}: CasePageProps) {
       <RelatedServices services={project.services} />
       <VisualDocumentation images={project.images} />
       <RelatedCases currentSlug={project.slug} services={project.services} />
-      <Navigation prevPage={prevCase} nextPage={nextCase} />
+      <Navigation prevPage={prevCase} nextPage={nextCase} page="/case" />
     </div>
   );
 }

@@ -6,9 +6,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 interface NavigationProps {
   prevPage: { slug: string; title: string } | null;
   nextPage: { slug: string; title: string } | null;
+  page: string;
 }
 
-export function Navigation({ prevPage, nextPage }: NavigationProps) {
+export function Navigation({ prevPage, nextPage, page}: NavigationProps) {
   if (!prevPage && !nextPage) return null;
 
   return (
@@ -17,7 +18,7 @@ export function Navigation({ prevPage, nextPage }: NavigationProps) {
         <div className="flex justify-between items-center border-t border-light pt-8">
           <div>
             {prevPage && (
-              <Link href={`/case/${prevPage.slug}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Link href={`${page}/${prevPage.slug}`} className="flex items-center gap-2 hover:text-primary transition-colors">
                 <ArrowLeft className="h-4 w-4" />
                 <div>
                   <div className="text-sm text-muted">Anterior</div>
@@ -29,7 +30,7 @@ export function Navigation({ prevPage, nextPage }: NavigationProps) {
           
           <div className="text-right">
             {nextPage && (
-              <Link href={`/case/${nextPage.slug}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Link href={`${page}/${nextPage.slug}`} className="flex items-center gap-2 hover:text-primary transition-colors">
                 <div>
                   <div className="text-sm text-muted">Próximo</div>
                   <div className="font-medium">{nextPage.title}</div>
