@@ -6,4 +6,8 @@ export interface Service {
   title: string;
   headline: string;
   description: string;
+  benefits: {
+    title: string;
+    description: string;
+  }[];
 }
