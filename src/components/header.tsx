@@ -46,7 +46,7 @@ export function Header() {
     { href: "/", label: "Home" },
     { href: "/sobre", label: "Sobre Nós" },
     { href: "/cases", label: "Cases" },
-    { href: "/servicos", label: "Serviços" },
+    { href: "/services", label: "Serviços" },
     { href: "/contato", label: "Contato" }
   ];
 

@@ -8,7 +8,7 @@ import { RevealText } from "./reveal-text";
 const companyLink = [
   { href: "/sobre", label: "Sobre Nós" },
   { href: "/cases", label: "Cases" },
-  { href: "/servicos", label: "Serviços" },
+  { href: "/services", label: "Serviços" },
   { href: "/contato", label: "Contato" }
 ];
 
