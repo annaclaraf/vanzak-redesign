@@ -1,18 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent, useSpring } from "framer-motion";
 import Logo from "@/icons/logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const { scrollY } = useScroll();
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  const springY = useSpring(0, {
+    stiffness: 300,
+    damping: 120,
+    mass: 0.8,
+  });
+
+  const springOpacity = useSpring(1, {
+    stiffness: 300,
+    damping: 120,
+    mass: 0.8,
+  });
 
   useEffect(() => {
     if (isOpen) {
@@ -29,13 +40,17 @@ export function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > (previous ?? 0) && latest > 90) {
-      setHidden(true);
+      springY.set(-100);
+      springOpacity.set(0);
     } else {
-      setHidden(false);
+      springY.set(0);
+      springOpacity.set(1);
     }
   });
 
   const toggleMenu = () => {
+    console.log('isOpen', isOpen);
+    console.log('isClosing', isClosing);
     if (isOpen) {
       setIsClosing(true);
     }
@@ -85,10 +100,11 @@ export function Header() {
 
   return (
     <motion.header
-      className={`${isHome ? "fixed" : "sticky" } top-0 left-0 right-0 z-50 bg-dark/80 border-b border-surface/60 ${!isOpen && !isClosing ? 'backdrop-blur-md' : ''} ${hidden && 'translate-y-[-100%]'}`}
-      initial={{ y: -100 }}
-      animate={{ y: hidden ? -100 : 0 }}
-      transition={{ duration: 0.3 }}
+    className={`${isHome ? "fixed" : "sticky" } top-0 left-0 right-0 z-50 bg-dark/80 border-b border-surface/60 ${!isOpen && !isClosing ? 'backdrop-blur-md' : '!transform-none'}`}
+      style={{
+        y: springY,
+        opacity: springOpacity,
+      }}
     >
       <div className="max-w-[1400px] w-full mx-auto px-5 py-5 flex items-center justify-between">
         <Link href="/" className="w-15 md:w-25 [&>svg]:w-full [&>svg]:h-auto">
@@ -123,13 +139,13 @@ export function Header() {
 
           <AnimatePresence onExitComplete={() => setIsClosing(false)}>
             {isOpen && (
-              <motion.div 
+              <motion.div
                 className="w-full h-full bg-surface fixed inset-0 z-40 flex flex-col justify-center items-center"
                 initial="closed"
                 animate="open"
                 exit="closed"
                 variants={menuVariants}
-              >                
+              >
                 <nav className="flex flex-col space-y-6 text-center">
                   {navLinks.map((link) => (
                     <motion.a
@@ -143,14 +159,17 @@ export function Header() {
                     </motion.a>
                   ))}
                 </nav>
-                
-                <motion.div 
-                  className="absolute bottom-12 left-0 right-0 text-center"
-                  variants={menuItemVariants}
-                >
+
+                <motion.div className="absolute bottom-12 left-0 right-0 text-center" variants={menuItemVariants}>
                   <div className="flex justify-center space-x-6 mb-4">
                     {externalLinks.map((link) => (
-                      <a key={link.href} href={link.href} target="_blank" className="text-light/56 hover:text-primary transition-colors">
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        className="text-light/56 hover:text-primary transition-colors"
+                        rel="noreferrer"
+                      >
                         {link.label}
                       </a>
                     ))}
