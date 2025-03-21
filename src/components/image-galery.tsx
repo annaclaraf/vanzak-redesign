@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { RevealText } from "./reveal-text";
 
-const images = ["/team-1.png", "/team-2.png",  "/team-3.png" ];
+const images = ["/team-1.png", "/team-2.png",  "/vanzak.png" ];
 
 export function ImageGalery() {
   return (
