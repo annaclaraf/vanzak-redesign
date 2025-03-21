@@ -100,7 +100,7 @@ export function Header() {
 
   return (
     <motion.header
-    className={`${isHome ? "fixed" : "sticky" } top-0 left-0 right-0 z-50 bg-dark/80 border-b border-surface/60 ${!isOpen && !isClosing ? 'backdrop-blur-md' : '!transform-none'}`}
+      className={`${isHome ? "fixed" : "sticky" } top-0 left-0 right-0 z-50 bg-dark/40 border-b border-surface/60 ${!isOpen && !isClosing ? 'backdrop-blur-md' : '!transform-none'}`}
       style={{
         y: springY,
         opacity: springOpacity,

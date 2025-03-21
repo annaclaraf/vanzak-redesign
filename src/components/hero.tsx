@@ -16,84 +16,28 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let particles: Array<{
-      x: number;
-      y: number;
-      radius: number;
-      vx: number;
-      vy: number;
-    }> = [];
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
-    };
-
-    const initParticles = () => {
-      particles = [];
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
-      
-      for (let i = 0; i < numberOfParticles; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 2 + 1,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-        });
-      }
-    };
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach((particle) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(200, 200, 200, 0.5)';
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    window.addEventListener('resize', resize);
-    resize();
-    animate();
-
-    return () => window.removeEventListener('resize', resize);
-  }, []);
-
   return (
     <section ref={ref} className="w-full relative min-h-screen flex items-center justify-center overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ background: 'transparent' }}
-      />
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          preload="auto"
+          className={`object-cover w-full h-full`}
+        >
+          <source src={'/Vanzak_BackgroundAzul.webm'} type="video/webm" />
+        </video>
+
+        <div className="absolute opacity-100 inset-0 bg-gradient-to-b from-[#111827]/60 to-dark"/>
+      </div>
       <motion.div className="container mx-auto px-4 z-10" style={{ y, opacity }}>
-        <div className="max-w-[400px] md:max-w-xl lg:max-w-4xl mx-auto text-center">
+        <div className="max-w-[400px] md:max-w-xl lg:max-w-4xl mx-auto text-center [text-shadow:_0_0_2px_#000]">
           <RevealText delay={0.2}>
             <h1 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-6">
-              Criamos <span className="text-primary">Experiências Digitais</span> que Importam
+              <span className="text-primary">Experiências Digitais</span> <br/> que Importam
             </h1>
           </RevealText>
           
@@ -122,11 +66,6 @@ export function Hero() {
         <div className="w-[2px] h-15 bg-white relative overflow-hidden fter:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-primary after:animate-scroll-down"></div>
         <ArrowDown size={20} className="animate-bounce" />
       </RevealText>
-      
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-light/10 rounded-full filter blur-3xl animate-pulse-slow animation-delay-1000"></div>
-      </div>
     </section>
   );
 }
