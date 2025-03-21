@@ -4,7 +4,7 @@ import React from 'react';
 
 import { motion } from "framer-motion";
 
-const words: string[] = ["Tráfego Pago", "Shopify Experts", "Influenciadores"];
+const words: string[] = ["Tráfego Pago", "Shopify Experts", "Influenciadores", "Social Media", "Branding", "Marketing Digital"];
 
 export function InfiniteScrolling() {
   return (
@@ -13,7 +13,7 @@ export function InfiniteScrolling() {
         <div className="max-w-[1020px] mx-auto flex relative overflow-hidden [mask-image:linear-gradient(to_right,#00000000_0%,#000_12%,#000_87%,#00000000_100%)]">
           <motion.ul
             transition={{
-              duration: 20,
+              duration: 50,
               ease: 'linear',
               repeat: Infinity,
             }}
