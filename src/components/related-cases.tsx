@@ -31,7 +31,7 @@ export function RelatedCases({ currentSlug, services }: RelatedCasesProps) {
       <div className="container">
         <RevealText>
           <h2 className="text-center md:text-left text-2xl md:text-3xl font-bold mb-6">
-            Cases Relacionados
+            Cases
           </h2>
         </RevealText>
         
