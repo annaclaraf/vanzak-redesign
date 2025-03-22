@@ -53,7 +53,7 @@ export function Hero() {
                 Explore Nosso Trabalho
               </MagneticLink>
               
-              <MagneticLink href="/contato" className="bg-transparent border border-primary text-primary px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
+              <MagneticLink href="/contato" className="bg-transparent border border-primary text-light px-8 py-3 rounded-md font-medium text-[14px] md:text-lg">
                 Entre em Contato
               </MagneticLink>
             </div>
