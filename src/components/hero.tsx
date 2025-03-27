@@ -34,9 +34,9 @@ export function Hero() {
         <div className="absolute opacity-100 inset-0 bg-gradient-to-b from-[#111827]/60 to-dark"/>
       </div>
       <motion.div className="container mx-auto px-4 z-10" style={{ y, opacity }}>
-        <div className="max-w-[400px] md:max-w-xl lg:max-w-4xl mx-auto text-center [text-shadow:_0_0_2px_#000]">
+        <div className="max-w-[400px] md:max-w-xl lg:max-w-4xl mx-auto text-center [text-shadow:_0_0_4px_#161616]">
           <RevealText delay={0.2}>
-            <h1 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-6">
+            <h1 className="text-5xl lg:text-8xl md:text-6xl font-bold mb-6">
               <span className="text-primary">Experiências Digitais</span> <br/> que Importam
             </h1>
           </RevealText>

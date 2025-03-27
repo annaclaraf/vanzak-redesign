@@ -30,7 +30,7 @@ export function RelatedCases({ currentSlug, services }: RelatedCasesProps) {
     <section className="py-10 md:py-15">
       <div className="container">
         <RevealText>
-          <h2 className="text-center md:text-left text-2xl md:text-3xl font-bold mb-6">
+          <h2 className="text-center md:text-left text-3xl md:text-4xl font-bold mb-6">
             Cases
           </h2>
         </RevealText>

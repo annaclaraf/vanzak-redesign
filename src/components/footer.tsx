@@ -31,7 +31,7 @@ export function Footer() {
             </div>
             
             <div>
-              <h4 className="text-base md:text-lg text-light font-semibold mb-4">Serviços</h4>
+              <h4 className="text-lg md:text-xl text-light font-semibold mb-4">Serviços</h4>
               <ul className="space-y-2">
                 {services.map((service, index) => (
                   <li key={index}>
@@ -44,7 +44,7 @@ export function Footer() {
             </div>
             
             <div>
-              <h4 className="text-base md:text-lg text-light font-semibold mb-4">Empresa</h4>
+              <h4 className="text-lg md:text-xl text-light font-semibold mb-4">Empresa</h4>
               <ul className="space-y-2">
                 {companyLink.map((link) => (
                   <li key={link.href}>
@@ -57,7 +57,7 @@ export function Footer() {
             </div>
             
             <div>
-              <h4 className="text-base md:text-lg text-light font-semibold mb-4">Contato</h4>
+              <h4 className="text-lg md:text-xl text-light font-semibold mb-4">Contato</h4>
               <address className="not-italic text-muted text-sm lg:text-base">
                 <p>Rua Haddock Lobo, 1307 - Jardim Paulista</p>
                 <p className="mt-2">

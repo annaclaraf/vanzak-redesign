@@ -28,7 +28,7 @@ export function CaseHero({ project }: CaseHeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-5">
           <div>
             <RevealText delay={0.2}>
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
                 {project.title}
               </h1>
             </RevealText>

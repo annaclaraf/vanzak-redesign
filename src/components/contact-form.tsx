@@ -195,7 +195,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
             <motion.div variants={itemVariants}>
               <div className="mb-1">
-                <label htmlFor="name" className="flex items-center text-sm font-medium text-light">
+                <label htmlFor="name" className="flex items-center text-base font-medium text-light">
                   <User size={16} className="mr-2 text-primary" />
                   Nome
                 </label>
@@ -217,7 +217,7 @@ export default function ContactForm() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="mt-1 text-sm text-red-400 pl-2"
+                      className="mt-1 text-xs md:text-sm text-red-400 pl-2"
                     >
                       {errors.name}
                     </motion.p>
@@ -228,7 +228,7 @@ export default function ContactForm() {
 
             <motion.div variants={itemVariants}>
               <div className="mb-1">
-                <label htmlFor="email" className="flex items-center text-sm font-medium text-light">
+                <label htmlFor="email" className="flex items-center text-base font-medium text-light">
                   <Mail size={16} className="mr-2 text-primary" />
                   Email
                 </label>
@@ -250,7 +250,7 @@ export default function ContactForm() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="mt-1 text-sm text-red-400 pl-2"
+                      className="mt-1 text-xs md:text-sm text-red-400 pl-2"
                     >
                       {errors.email}
                     </motion.p>
@@ -261,7 +261,7 @@ export default function ContactForm() {
 
             <motion.div variants={itemVariants}>
               <div className="mb-1">
-                <label htmlFor="subject" className="flex items-center text-sm font-medium text-light">
+                <label htmlFor="subject" className="flex items-center text-base font-medium text-light">
                   <FileText size={16} className="mr-2 text-primary" />
                   Assunto
                 </label>
@@ -283,7 +283,7 @@ export default function ContactForm() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="mt-1 text-sm text-red-400 pl-2"
+                      className="mt-1 text-xs md:text-sm text-red-400 pl-2"
                     >
                       {errors.subject}
                     </motion.p>
@@ -294,7 +294,7 @@ export default function ContactForm() {
 
             <motion.div variants={itemVariants}>
               <div className="mb-1">
-                <label htmlFor="message" className="flex items-center text-sm font-medium text-light">
+                <label htmlFor="message" className="flex items-center text-base font-medium text-light">
                   <MessageSquare size={16} className="mr-2 text-primary" />
                   Mensagem
                 </label>
@@ -316,7 +316,7 @@ export default function ContactForm() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="mt-1 text-sm text-red-400 pl-2"
+                      className="mt-1 text-xs md:text-sm text-red-400 pl-2"
                     >
                       {errors.message}
                     </motion.p>

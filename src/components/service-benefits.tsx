@@ -11,7 +11,7 @@ export function ServiceBenefits({ benefits }: ServiceBenefitsProps) {
     <section className="py-10 md:py-15 bg-[#111827]">
       <div className="container">
         <RevealText>
-          <h2 className="text-center md:text-left text-2xl md:text-3xl font-bold mb-6">
+          <h2 className="text-center md:text-left text-3xl md:text-4xl font-bold mb-6">
             Benefícios
           </h2>
         </RevealText>

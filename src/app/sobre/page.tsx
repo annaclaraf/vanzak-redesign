@@ -30,7 +30,7 @@ export default function About() {
 
         <div className="w-full max-w-[850px] lg:max-w-full mx-auto text-center absolute top-[50%] -translate-y-1/2">
           <RevealText delay={0.4}>
-            <h1 className="text-4xl md:text-6xl font-bold text-center">
+            <h1 className="text-5xl md:text-7xl font-bold text-center">
               Sobre Nós
             </h1>
           </RevealText>

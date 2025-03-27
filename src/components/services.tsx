@@ -19,7 +19,7 @@ export function Services() {
             </span>
           </RevealText>
           <RevealText delay={0.2}>
-            <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl lg:text-7xl md:text-5xl font-bold mb-4">
               Transformando Ideias em <span className="text-primary">Realidade Digital</span>
             </h2>
           </RevealText>
@@ -38,7 +38,7 @@ export function Services() {
                 <h3 className="text-lg md:text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-light/70 text-sm md:text-[16px] mb-6">{service.description}</p>
 
-                <MagneticLink href={`service/${service.slug}`} className="text-light font-medium hover:text-primary transition-colors flex items-center gap-2 w-fit">
+                <MagneticLink href={`service/${service.slug}`} className="text-sm md:text-base text-light font-medium hover:text-primary transition-colors flex items-center gap-2 w-fit">
                   Ver Mais <ArrowRight size={20} />
                 </MagneticLink>
               </div>

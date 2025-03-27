@@ -15,7 +15,7 @@ export function ServiceLayout() {
             </span>
           </RevealText>
           <RevealText delay={0.2}>
-            <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl lg:text-7xl md:text-5xl font-bold mb-4">
               Soluções, Estratégias e <span className="text-primary">Crescimento</span>
             </h2>
           </RevealText>

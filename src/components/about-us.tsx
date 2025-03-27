@@ -19,7 +19,7 @@ export function AboutUs() {
             </span>
           </RevealText>
           <RevealText delay={0.2}>
-            <h2 className="text-3xl lg:text-[54px] md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl lg:text-[68px] md:text-5xl font-bold mb-4">
               <span className="text-primary">Vanzak Labs:</span> Agência de performance
             </h2>
           </RevealText>

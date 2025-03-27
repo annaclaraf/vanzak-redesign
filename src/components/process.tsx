@@ -44,7 +44,7 @@ export function Process() {
             </span>
           </RevealText>
           <RevealText delay={0.2}>
-            <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl lg:text-7xl md:text-5xl font-bold mb-4">
               Como nós <span className="text-primary">Trabalhamos</span>
             </h2>
           </RevealText>

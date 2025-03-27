@@ -24,7 +24,7 @@ export function InfiniteScrolling() {
             {[...new Array(6)].fill(0).map((_, i) => (
               <React.Fragment key={i}>
                 {words.map((word, index) => (
-                  <li  key={`${i}-${index}`} className="text-base md:text-lg text-muted">
+                  <li  key={`${i}-${index}`} className="text-lg md:text-xl text-muted">
                     {word}
                   </li>
                 ))}

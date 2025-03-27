@@ -167,14 +167,14 @@ export function Header() {
                         key={link.href}
                         href={link.href}
                         target="_blank"
-                        className="text-light/56 hover:text-primary transition-colors"
+                        className="text-sm text-light/56 hover:text-primary transition-colors"
                         rel="noreferrer"
                       >
                         {link.label}
                       </a>
                     ))}
                   </div>
-                  <p className="text-light/56">© {new Date().getFullYear()} VanzakLabs</p>
+                  <p className="text-sm text-light/56">© {new Date().getFullYear()} VanzakLabs</p>
                 </motion.div>
               </motion.div>
             )}
