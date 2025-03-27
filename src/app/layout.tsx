@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { CustomCursor } from "@/components/custom-cursor";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ProgressScroll } from "@/components/progress-scroll";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserratSans = Montserrat({
+  variable: "--font-montserrat-sans",
   subsets: ["latin"],
 });
 
@@ -24,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="pt-BR">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] bg-dark text-light`}>
+      <body className={`${montserratSans.variable} antialiased font-[family-name:var(--font-montserrat-sans)] bg-dark text-light`}>
         <ProgressScroll />
         <CustomCursor />
         <Header />
