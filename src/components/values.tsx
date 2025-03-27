@@ -29,7 +29,7 @@ export function Values() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {values.map((value, index) => (
             <RevealText key={index} delay={index * 0.1}>
-              <div className="relative bg-surface/30 h-ful rounded-lg p-6 overflow-hidden">
+              <div className="relative bg-surface/30 h-full rounded-lg p-6 overflow-hidden">
                 <div className="text-primary mb-3 md:mb-6">{value.icon}</div>
                 <h3 className="text-lg md:text-xl font-bold mb-3">{value.title}</h3>
                 <p className="text-light/70 text-sm md:text-[16px] mb-6">{value.description}</p>
