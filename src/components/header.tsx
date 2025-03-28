@@ -49,8 +49,6 @@ export function Header() {
   });
 
   const toggleMenu = () => {
-    console.log('isOpen', isOpen);
-    console.log('isClosing', isClosing);
     if (isOpen) {
       setIsClosing(true);
     }
